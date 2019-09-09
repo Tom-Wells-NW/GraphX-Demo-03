@@ -1,0 +1,27 @@
+﻿<Application x:Class="Fss.Graph.Demo.App01.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ignore="http://www.galasoft.ch/mvvmlight"
+             xmlns:local="clr-namespace:Fss.Graph.Demo.App01"
+             xmlns:views="clr-namespace:Fss.Graph.Demo.App01.Views"
+             xmlns:vms="clr-namespace:Fss.Graph.Demo.App01.ViewModels"
+
+             mc:Ignorable="d"
+             StartupUri="./Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Resources/GraphStyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BitmapImage x:Key="planet01" UriSource="/Images/image.1254.bmp" />
+            <!-- Global View Model Locator-->
+            <!--xmlns:d="http://schemas.microsoft.com/expression/blend/2008"-->
+            <vms:ViewModelLocator x:Key="Locator" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
