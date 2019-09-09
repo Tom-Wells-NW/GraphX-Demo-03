@@ -19,6 +19,7 @@ namespace Fss.Graph.Demo.App01.ViewModels
             InitializeGraph();
             Name = "Graph View Model";
             UnsetVerticesIsSelectedCommandName = "Unselect All Vertices";
+            SetVerticesIsSelectedCommandName = "Select All Vertices";
         }
 
         private void InitializeGraph()
@@ -142,8 +143,38 @@ namespace Fss.Graph.Demo.App01.ViewModels
         }
         #endregion Command - Unset Vertices Is Selected 
 
+
+        #region Command - Set Vertices Is Selected 
+        private string _setVerticesIsSelectedCommandName;
+        public string SetVerticesIsSelectedCommandName
+        {
+            get { return _setVerticesIsSelectedCommandName; }
+            set { Set(ref _setVerticesIsSelectedCommandName, value); }
+        }
+
+        private RelayCommand _setVerticesIsSelectedCommand;
+
+        public RelayCommand SetVerticesIsSelectedCommand
+        {
+            get
+            {
+                return _setVerticesIsSelectedCommand
+                    ?? (_setVerticesIsSelectedCommand = new RelayCommand(
+                    () =>
+                    {
+                        foreach (var vertex in Vertices)
+                        {
+                            if (!vertex.Equals(SelectedVertex)) vertex.IsSelected = true;
+                        }
+                    },
+                    () => true));
+            }
+        }
+        #endregion Command - Set Vertices Is Selected 
+
+
         #region Command - Rest Graph Data
-        
+
         #endregion Command - Rest Graph Data
     }
 }

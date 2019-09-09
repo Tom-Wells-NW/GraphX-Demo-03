@@ -82,7 +82,7 @@
         <!-- Command List -->
         <StackPanel Orientation="Horizontal" Grid.Column="1"  Grid.Row="2" >
             <Button Content="{Binding GraphViewModel.UnsetVerticesIsSelectedCommandName}" Command="{Binding GraphViewModel.UnsetVerticesIsSelectedCommand}" HorizontalAlignment="Left" Width="140" Margin="5,10"/>
-            <Button Content="Button" HorizontalAlignment="Left" Width="140" Margin="5,10"/>
+            <Button Content="{Binding GraphViewModel.SetVerticesIsSelectedCommandName}" Command="{Binding GraphViewModel.SetVerticesIsSelectedCommand}"  HorizontalAlignment="Left" Width="140" Margin="5,10"/>
             <Button Content="Button" HorizontalAlignment="Left" Width="140" Margin="5,10"/>
         </StackPanel>
     </Grid>
