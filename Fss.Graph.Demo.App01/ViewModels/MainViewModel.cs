@@ -19,6 +19,11 @@ namespace Fss.Graph.Demo.App01.ViewModels
             GraphViewModel = graphViewModel;
         }
 
+        private void InitializeCommands()
+        {
+            var viewUniverseDataRelayCommand = new RelayCommand(() => LoadUniverseData(), () => HasUniverseData);
+            ViewUniverseDataCommand = new CommandViewModelBase<RelayCommand>("View Universe Data", viewUniverseDataRelayCommand);
+        }
 
         private string _name;
         public string Name
@@ -34,5 +39,21 @@ namespace Fss.Graph.Demo.App01.ViewModels
             get { return _graphViewModel; }
             set { Set(ref _graphViewModel, value); }
         }
+
+        private IUniverseGraphViewModel _universeGraphViewModel;
+        public IUniverseGraphViewModel UniverseGraphViewModel
+        {
+            get { return _universeGraphViewModel; }
+            set { Set(ref _universeGraphViewModel, value); }
+        }
+
+
+        public bool HasUniverseData { get { return true; } }
+        public void LoadUniverseData()
+        {
+
+        }
+
+        public CommandViewModelBase<RelayCommand> ViewUniverseDataCommand { get; set; }
     }
 }

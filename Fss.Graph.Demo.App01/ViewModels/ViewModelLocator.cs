@@ -14,8 +14,6 @@ using GalaSoft.MvvmLight.Ioc;
 
 namespace Fss.Graph.Demo.App01.ViewModels
 {
-
-
     public class ViewModelLocator
     {
         private static ViewModelLocator _current;
@@ -26,8 +24,10 @@ namespace Fss.Graph.Demo.App01.ViewModels
         {
             var builder = new ContainerBuilder();
                 builder.RegisterType<GraphDataHelper>().As<IGraphDataHelper>().AsSelf();
+                builder.RegisterType<UniverseGraphDataHelper>().As<IUniverseGraphDataHelper>().AsSelf();
                 builder.RegisterType<MainViewModel>().As<IMainViewModel>().AsSelf();
                 builder.RegisterType<GraphViewModel>().As<IGraphViewModel>().AsSelf();
+                builder.RegisterType<UniverseGraphViewModel>().As<IUniverseGraphViewModel>().AsSelf();
 
             if (!ViewModelBase.IsInDesignModeStatic)
             {
@@ -50,6 +50,8 @@ namespace Fss.Graph.Demo.App01.ViewModels
         public static IContainer Container { get; set; }
 
         public IMainViewModel MainViewModel => Container.Resolve<IMainViewModel>();
+
+        public IUniverseGraphViewModel UniverseGraphViewModel => Container.Resolve<IUniverseGraphViewModel>();
 
 
         private static string OuputRegistrations()
