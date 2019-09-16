@@ -167,5 +167,13 @@ namespace Fss.Graph.Demo.Library.Helpers
 
             return result;
         }
+
+        private static string GetShortTypeName(Type t)
+        {
+            var s = t.ToString();
+            var index = s.LastIndexOf(".");
+            var result = s.Substring(index + 1, s.Length - (index + 1));
+            return result;
+        }
     }
 }
