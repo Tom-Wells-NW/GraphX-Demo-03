@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Fss.Graph.Demo.App01.ViewModels
 {
-    public class GraphViewModel : ViewModelBase, IGraphViewModel
+    public class UniverseGraphViewModel : ViewModelBase, IUniverseGraphViewModel
     {
-        public GraphViewModel(IGraphDataHelper graphDataHelper)
+        public UniverseGraphViewModel(IUniverseGraphDataHelper graphDataHelper)
         {
             this.GraphDataHelper = graphDataHelper;
             InitializeGraph();
-            Name = "Graph View Model";
+            Name = "Universe Graph View Model";
             UnsetVerticesIsSelectedCommandName = "Unselect All Vertices";
             SetVerticesIsSelectedCommandName = "Select All Vertices";
         }
@@ -31,37 +31,37 @@ namespace Fss.Graph.Demo.App01.ViewModels
         {
             if (Edges?.Count() > 0) Edges.Clear();
             if (Vertices?.Count() > 0) Vertices.Clear();
-            if(NodeGraph != null) NodeGraph.Clear();
+            if (UniverseGraph != null) UniverseGraph.Clear();
 
-            NodeGraph = GraphDataHelper.LoadGraphData(300);
+            UniverseGraph = GraphDataHelper.LoadGraphData(300);
 
         }
 
-        private IGraphDataHelper _graphDataHelper;
-        private IGraphDataHelper GraphDataHelper
+        private IUniverseGraphDataHelper _graphDataHelper;
+        private IUniverseGraphDataHelper GraphDataHelper
         {
             get { return _graphDataHelper; }
             set { Set(ref _graphDataHelper, value); }
         }
 
-        private NodeGraph _nodeGraph;
-        public NodeGraph NodeGraph
+        private UniverseGraph _universeGraph;
+        public UniverseGraph UniverseGraph
         {
-            get { return _nodeGraph; }
+            get { return _universeGraph; }
             set
             {
-                Set(ref _nodeGraph, value);
-                Vertices = _nodeGraph.Vertices.ToList();
+                Set(ref _universeGraph, value);
+                Vertices = _universeGraph.Vertices.ToList();
 
-                SelectedVertex = (_nodeGraph.Vertices.FirstOrDefault());
-                Edges = _nodeGraph.Edges.ToList();
-                NodeCount = _nodeGraph.VertexCount;
+                SelectedVertex = (_universeGraph.Vertices.FirstOrDefault());
+                Edges = _universeGraph.Edges.ToList();
+                UniverseCount = _universeGraph.VertexCount;
             }
         }
 
 
-        private DataVertex _selectedVertex;
-        public DataVertex SelectedVertex
+        private UniverseVertex _selectedVertex;
+        public UniverseVertex SelectedVertex
         {
             get { return _selectedVertex; }
             set
@@ -69,41 +69,45 @@ namespace Fss.Graph.Demo.App01.ViewModels
                 var prevSelectedVertex = _selectedVertex;
                 Set(ref _selectedVertex, value);
 
-                if (prevSelectedVertex != null && !prevSelectedVertex.Equals(value)) { prevSelectedVertex.IsSelected = false; }
-                if (_selectedVertex != null && !_selectedVertex.Equals(prevSelectedVertex)) { _selectedVertex.IsSelected = true; }
+                if (ShouldUpdateIsSelected(prevSelectedVertex, value)) { prevSelectedVertex.IsSelected = false; }
+                if (ShouldUpdateIsSelected(_selectedVertex, prevSelectedVertex)) { _selectedVertex.IsSelected = true; }
             }
         }
 
+        private static bool ShouldUpdateIsSelected(UniverseVertex updateTarget, UniverseVertex compareTarget)
+        {
+            return updateTarget != null && !updateTarget.Equals(compareTarget);
+        }
 
-        private IList<DataVertex> _vertices;
-        public IList<DataVertex> Vertices
+        private IList<UniverseVertex> _vertices;
+        public IList<UniverseVertex> Vertices
         {
             get { return _vertices; }
             set { Set(ref _vertices, value); }
         }
 
 
-        private DataEdge _selectedEdge;
-        public DataEdge SelectedEdge
+        private UniverseEdge _selectedEdge;
+        public UniverseEdge SelectedEdge
         {
             get { return _selectedEdge; }
             set { Set(ref _selectedEdge, value); }
         }
 
 
-        private IList<DataEdge> _edges;
-        public IList<DataEdge> Edges
+        private IList<UniverseEdge> _edges;
+        public IList<UniverseEdge> Edges
         {
             get { return _edges; }
             set { Set(ref _edges, value); }
         }
 
 
-        private int _nodeCount;
-        public int NodeCount
+        private int _universeCount;
+        public int UniverseCount
         {
-            get { return _nodeCount; }
-            set { Set(ref _nodeCount, value); }
+            get { return _universeCount; }
+            set { Set(ref _universeCount, value); }
         }
 
 

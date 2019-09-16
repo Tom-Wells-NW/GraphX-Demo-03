@@ -55,13 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\NodesGraphArea.cs" />
+    <Compile Include="Controls\UniverseGraphArea.cs" />
     <Compile Include="Helpers\GraphDataHelper.cs" />
     <Compile Include="Helpers\IGraphDataHelper.cs" />
+    <Compile Include="Helpers\IUniverseGraphDataHelper.cs" />
+    <Compile Include="Helpers\UniverseGraphDataHelper.cs" />
     <Compile Include="ViewModels.Interfaces\IMainViewModel.cs" />
-    <Compile Include="ViewModels\GraphViewModel.cs" />
-    <Compile Include="ViewModels.Interfaces\IGraphViewModel.cs" />
+    <Compile Include="ViewModels\CommandViewModelBase.cs" />
+    <Compile Include="ViewModels.Interfaces\IUniverseGraphViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\UniverseGraphViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

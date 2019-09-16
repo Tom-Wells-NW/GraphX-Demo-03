@@ -44,10 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\DesignDataHelper.cs" />
+    <Compile Include="Helpers\DesignUniverseGraphDataHelper.cs" />
     <Compile Include="Models\DataEdge.cs" />
     <Compile Include="Models\DataVertex.cs" />
     <Compile Include="Models\GXLogicCoreExample.cs" />
+    <Compile Include="Models\GXLogicCoreUniverse.cs" />
+    <Compile Include="Models\IUniverseModel.cs" />
+    <Compile Include="Models\IUniverseObjectModel.cs" />
     <Compile Include="Models\NodeGraph.cs" />
+    <Compile Include="Models\UniverseEdge.cs" />
+    <Compile Include="Models\UniverseGraph.cs" />
+    <Compile Include="Models\UniverseModel.cs" />
+    <Compile Include="Models\UniverseObjectModel.cs" />
+    <Compile Include="Models\UniverseVertex.cs" />
     <Compile Include="Models\VertexViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

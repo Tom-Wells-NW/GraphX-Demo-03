@@ -44,19 +44,21 @@ namespace Fss.Graph.Demo.App01.Views
             if (DataContext is MainViewModel)
             {
                 var viewModel = (MainViewModel)DataContext;
-                var logicCore = new GXLogicCoreExample();
+                var logicCore = new GXLogicCoreUniverse();
 
                 logicCore.DefaultLayoutAlgorithmParams =
                     logicCore.AlgorithmFactory.CreateLayoutParameters(LayoutAlgorithmTypeEnum.KK);
-                
-                //Unfortunately to change algo parameters you need to specify params type which is different for every algorithm.
+
+                // Unfortunately to change algo parameters you need to specify params type which is different 
+                // for every algorithm.
                 ((KKLayoutParameters)logicCore.DefaultLayoutAlgorithmParams).Width = 500;
                 ((KKLayoutParameters)logicCore.DefaultLayoutAlgorithmParams).Height = 400;
                 ((KKLayoutParameters)logicCore.DefaultLayoutAlgorithmParams).AdjustForGravity = false;
 
-                ////This property sets edge routing algorithm that is used to build route paths according to algorithm logic.
-                ////For ex., SimpleER algorithm will try to set edge paths around vertices so no edge will intersect any vertex.
-                //logicCore.DefaultEdgeRoutingAlgorithm = EdgeRoutingAlgorithmTypeEnum.SimpleER;
+                // This property sets edge routing algorithm that is used to build route paths according to 
+                // algorithm logic. For ex., SimpleER algorithm will try to set edge paths around vertices 
+                // so no edge will intersect any vertex.
+                //// logicCore.DefaultEdgeRoutingAlgorithm = EdgeRoutingAlgorithmTypeEnum.SimpleER;
                 logicCore.DefaultEdgeRoutingAlgorithm = EdgeRoutingAlgorithmTypeEnum.SimpleER;
 
                 //This property sets vertex overlap removal algorithm.
@@ -64,16 +66,16 @@ namespace Fss.Graph.Demo.App01.Views
                 logicCore.DefaultOverlapRemovalAlgorithm = OverlapRemovalAlgorithmTypeEnum.FSA;
                 //Setup optional params
                 logicCore.DefaultOverlapRemovalAlgorithmParams =
-                                  logicCore.AlgorithmFactory.CreateOverlapRemovalParameters(OverlapRemovalAlgorithmTypeEnum.FSA);
+                    logicCore.AlgorithmFactory.CreateOverlapRemovalParameters(OverlapRemovalAlgorithmTypeEnum.FSA);
                 ((OverlapRemovalParameters)logicCore.DefaultOverlapRemovalAlgorithmParams).HorizontalGap = 20;
                 ((OverlapRemovalParameters)logicCore.DefaultOverlapRemovalAlgorithmParams).VerticalGap = 20;
 
-                logicCore.Graph = viewModel.GraphViewModel.NodeGraph;
+                logicCore.Graph = viewModel.GraphViewModel.UniverseGraph;
 
-                nodesGraphArea.LogicCore = logicCore;
+                universeGraphArea.LogicCore = logicCore;
                 //nodesGraphArea.LogicCore.Graph = viewModel.NodeGraph;
-                nodesGraphArea.GenerateGraph();
-                nodesGraphArea.RelayoutGraph(true);
+                universeGraphArea.GenerateGraph();
+                universeGraphArea.RelayoutGraph(true);
             }
         }
     }
