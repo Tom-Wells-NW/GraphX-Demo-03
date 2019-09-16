@@ -26,21 +26,21 @@
             return Text;
         }
 
-        private object _viewModelTypeString;
-        public object ViewModelTypeString
+        private object _modelTypeString;
+        public object ModelTypeString
         {
-            get { return _viewModelTypeString; }
-            set { Set(ref _viewModelTypeString, value); }
+            get { return _modelTypeString; }
+            set { Set(ref _modelTypeString, value); }
         }
 
-        private object _viewModel;
-        public object ViewModel
+        private object _model;
+        public object Model
         {
-            get { return _viewModel; }
+            get { return _model; }
             set
             {
-                Set(ref _viewModel, value);
-                if (_viewModel != null) ViewModelTypeString = _viewModel.GetType().ToString();
+                Set(ref _model, value);
+                if (_model != null) ModelTypeString = _model.GetType().ToString();
             }
         }
     }
