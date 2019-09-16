@@ -14,7 +14,7 @@ namespace Fss.Graph.Demo.App01.ViewModels
 {
     public class MainViewModel : ViewModelBase, IMainViewModel
     {
-        public MainViewModel(IGraphViewModel graphViewModel) 
+        public MainViewModel(IUniverseGraphViewModel graphViewModel) 
         {
             GraphViewModel = graphViewModel;
         }
@@ -33,18 +33,11 @@ namespace Fss.Graph.Demo.App01.ViewModels
         }
 
 
-        private IGraphViewModel _graphViewModel;
-        public IGraphViewModel GraphViewModel
+        private IUniverseGraphViewModel _graphViewModel;
+        public IUniverseGraphViewModel GraphViewModel
         {
             get { return _graphViewModel; }
             set { Set(ref _graphViewModel, value); }
-        }
-
-        private IUniverseGraphViewModel _universeGraphViewModel;
-        public IUniverseGraphViewModel UniverseGraphViewModel
-        {
-            get { return _universeGraphViewModel; }
-            set { Set(ref _universeGraphViewModel, value); }
         }
 
 

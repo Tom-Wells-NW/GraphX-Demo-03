@@ -39,7 +39,7 @@
         </DockPanel>
 
         <gx:ZoomControl x:Name="gg_zoomctrl" Grid.Row="1" Grid.Column="1" >
-            <controls:NodesGraphArea x:Name="nodesGraphArea" />
+            <controls:UniverseGraphArea x:Name="universeGraphArea" />
         </gx:ZoomControl>
 
         <DockPanel Grid.Row="1">

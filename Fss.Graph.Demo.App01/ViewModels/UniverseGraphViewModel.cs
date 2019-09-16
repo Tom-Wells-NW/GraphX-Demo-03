@@ -31,9 +31,9 @@ namespace Fss.Graph.Demo.App01.ViewModels
         {
             if (Edges?.Count() > 0) Edges.Clear();
             if (Vertices?.Count() > 0) Vertices.Clear();
-            if (NodeGraph != null) NodeGraph.Clear();
+            if (UniverseGraph != null) UniverseGraph.Clear();
 
-            NodeGraph = GraphDataHelper.LoadGraphData(300);
+            UniverseGraph = GraphDataHelper.LoadGraphData(300);
 
         }
 
@@ -55,7 +55,7 @@ namespace Fss.Graph.Demo.App01.ViewModels
 
                 SelectedVertex = (_universeGraph.Vertices.FirstOrDefault());
                 Edges = _universeGraph.Edges.ToList();
-                NodeCount = _universeGraph.VertexCount;
+                UniverseCount = _universeGraph.VertexCount;
             }
         }
 

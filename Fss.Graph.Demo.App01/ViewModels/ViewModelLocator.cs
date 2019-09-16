@@ -26,7 +26,6 @@ namespace Fss.Graph.Demo.App01.ViewModels
                 builder.RegisterType<GraphDataHelper>().As<IGraphDataHelper>().AsSelf();
                 builder.RegisterType<UniverseGraphDataHelper>().As<IUniverseGraphDataHelper>().AsSelf();
                 builder.RegisterType<MainViewModel>().As<IMainViewModel>().AsSelf();
-                builder.RegisterType<GraphViewModel>().As<IGraphViewModel>().AsSelf();
                 builder.RegisterType<UniverseGraphViewModel>().As<IUniverseGraphViewModel>().AsSelf();
 
             if (!ViewModelBase.IsInDesignModeStatic)

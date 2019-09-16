@@ -7,16 +7,16 @@ using QuickGraph;
 namespace Fss.Graph.Demo.App01.Controls
 {
     //Layout visual class
-    public class NodesGraphArea : GraphArea<DataVertex, DataEdge, BidirectionalGraph<DataVertex, DataEdge>>
+    public class UniverseGraphArea : GraphArea<UniverseVertex, UniverseEdge, BidirectionalGraph<UniverseVertex, UniverseEdge>>
     {
-        public NodesGraphArea() : base()
+        public UniverseGraphArea() : base()
         {
-            this.SourceUpdated += NodesGraphArea_SourceUpdated;
+            this.SourceUpdated += UniverseGraphArea_SourceUpdated;
         }
 
-        private void NodesGraphArea_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
+        private void UniverseGraphArea_SourceUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
-            Console.WriteLine("NodesGraphArea_SourceUpdated...");
+            Console.WriteLine("UniverseGraphArea_SourceUpdated...");
             HasGraphData = true;
         }
 
@@ -25,7 +25,7 @@ namespace Fss.Graph.Demo.App01.Controls
         public static readonly DependencyProperty HasGraphDataProperty = DependencyProperty.Register
             (
                 "HasGraphData", typeof(Boolean),
-                typeof(NodesGraphArea)
+                typeof(UniverseGraphArea)
             );
 
         public bool HasGraphData
