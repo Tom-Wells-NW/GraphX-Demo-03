@@ -14,11 +14,16 @@ namespace Fss.Graph.Demo.App01.ViewModels
 {
     public class MainViewModel : ViewModelBase, IMainViewModel
     {
-        public MainViewModel(IGraphViewModel graphViewModel) 
+        public MainViewModel(IUniverseGraphViewModel graphViewModel) 
         {
             GraphViewModel = graphViewModel;
         }
 
+        private void InitializeCommands()
+        {
+            var viewUniverseDataRelayCommand = new RelayCommand(() => LoadUniverseData(), () => HasUniverseData);
+            ViewUniverseDataCommand = new CommandViewModelBase<RelayCommand>("View Universe Data", viewUniverseDataRelayCommand);
+        }
 
         private string _name;
         public string Name
@@ -28,11 +33,20 @@ namespace Fss.Graph.Demo.App01.ViewModels
         }
 
 
-        private IGraphViewModel _graphViewModel;
-        public IGraphViewModel GraphViewModel
+        private IUniverseGraphViewModel _graphViewModel;
+        public IUniverseGraphViewModel GraphViewModel
         {
             get { return _graphViewModel; }
             set { Set(ref _graphViewModel, value); }
         }
+
+
+        public bool HasUniverseData { get { return true; } }
+        public void LoadUniverseData()
+        {
+
+        }
+
+        public CommandViewModelBase<RelayCommand> ViewUniverseDataCommand { get; set; }
     }
 }
