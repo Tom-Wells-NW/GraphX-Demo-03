@@ -7,7 +7,7 @@ using QuickGraph;
 namespace Fss.Graph.Demo.App01.Controls
 {
     //Layout visual class
-    public class UniverseGraphArea : GraphArea<UniverseVertex, UniverseEdge, BidirectionalGraph<UniverseVertex, UniverseEdge>>
+    public class UniverseGraphArea : GraphArea<IUniverseVertex, IUniverseEdge, BidirectionalGraph<IUniverseVertex, IUniverseEdge>>
     {
         public UniverseGraphArea() : base()
         {

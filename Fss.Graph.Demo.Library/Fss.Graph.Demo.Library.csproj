@@ -49,9 +49,12 @@
     <Compile Include="Models\DataVertex.cs" />
     <Compile Include="Models\GXLogicCoreExample.cs" />
     <Compile Include="Models\GXLogicCoreUniverse.cs" />
+    <Compile Include="Models\IUniverseEdge.cs" />
     <Compile Include="Models\IUniverseModel.cs" />
     <Compile Include="Models\IUniverseObjectModel.cs" />
+    <Compile Include="Models\IUniverseVertex.cs" />
     <Compile Include="Models\NodeGraph.cs" />
+    <Compile Include="Models\TVertex.cs" />
     <Compile Include="Models\UniverseEdge.cs" />
     <Compile Include="Models\UniverseGraph.cs" />
     <Compile Include="Models\UniverseModel.cs" />

@@ -1,10 +1,12 @@
-﻿using GraphX.PCL.Common.Models;
+﻿using GraphX.PCL.Common.Interfaces;
+using GraphX.PCL.Common.Models;
+using QuickGraph;
 
 namespace Fss.Graph.Demo.Library.Models
 {
-    public class UniverseEdge : EdgeBase<UniverseVertex>
+    public class UniverseEdge : EdgeBase<IUniverseVertex>, IUniverseEdge, IGraphXEdge<IUniverseVertex>, IGraphXCommonEdge, IIdentifiableGraphDataObject, IRoutingInfo, IWeightedEdge<IUniverseVertex>, IEdge<IUniverseVertex>
     {
-        public UniverseEdge(UniverseVertex source, UniverseVertex target, double weight = 1) : base(source, target, weight) { }
+        public UniverseEdge(IUniverseVertex source, IUniverseVertex target, double weight = 1) : base(source, target, weight) { }
 
         public UniverseEdge() : base(null, null, 1) { }
 

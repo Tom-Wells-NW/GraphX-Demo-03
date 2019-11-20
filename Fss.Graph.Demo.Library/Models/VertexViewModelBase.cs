@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace Fss.Graph.Demo.Library.Models
 {
-    public abstract class VertexViewModelBase : ViewModelBase, IGraphXVertex
+    public abstract class VertexViewModelBase : ViewModelBase, IGraphXVertex, IEquatable<IGraphXVertex>, IIdentifiableGraphDataObject
     {
         protected VertexViewModelBase()
         {

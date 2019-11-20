@@ -60,8 +60,8 @@ namespace Fss.Graph.Demo.App01.ViewModels
         }
 
 
-        private UniverseVertex _selectedVertex;
-        public UniverseVertex SelectedVertex
+        private IUniverseVertex _selectedVertex;
+        public IUniverseVertex SelectedVertex
         {
             get { return _selectedVertex; }
             set
@@ -74,29 +74,29 @@ namespace Fss.Graph.Demo.App01.ViewModels
             }
         }
 
-        private static bool ShouldUpdateIsSelected(UniverseVertex updateTarget, UniverseVertex compareTarget)
+        private static bool ShouldUpdateIsSelected(IUniverseVertex updateTarget, IUniverseVertex compareTarget)
         {
             return updateTarget != null && !updateTarget.Equals(compareTarget);
         }
 
-        private IList<UniverseVertex> _vertices;
-        public IList<UniverseVertex> Vertices
+        private IList<IUniverseVertex> _vertices;
+        public IList<IUniverseVertex> Vertices
         {
             get { return _vertices; }
             set { Set(ref _vertices, value); }
         }
 
 
-        private UniverseEdge _selectedEdge;
-        public UniverseEdge SelectedEdge
+        private IUniverseEdge _selectedEdge;
+        public IUniverseEdge SelectedEdge
         {
             get { return _selectedEdge; }
             set { Set(ref _selectedEdge, value); }
         }
 
 
-        private IList<UniverseEdge> _edges;
-        public IList<UniverseEdge> Edges
+        private IList<IUniverseEdge> _edges;
+        public IList<IUniverseEdge> Edges
         {
             get { return _edges; }
             set { Set(ref _edges, value); }

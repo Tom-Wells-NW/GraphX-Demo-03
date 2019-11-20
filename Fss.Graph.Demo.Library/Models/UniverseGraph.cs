@@ -2,5 +2,5 @@
 
 namespace Fss.Graph.Demo.Library.Models
 {
-    public class UniverseGraph : BidirectionalGraph<UniverseVertex, UniverseEdge> { }
+    public class UniverseGraph : BidirectionalGraph<IUniverseVertex, IUniverseEdge> { }
 }

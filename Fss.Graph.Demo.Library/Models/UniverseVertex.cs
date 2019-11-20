@@ -1,6 +1,9 @@
-﻿namespace Fss.Graph.Demo.Library.Models
+﻿using GraphX.PCL.Common.Interfaces;
+using System;
+
+namespace Fss.Graph.Demo.Library.Models
 {
-    public class UniverseVertex : VertexViewModelBase
+    public class UniverseVertex : VertexViewModelBase, IUniverseVertex, IGraphXVertex, IEquatable<IGraphXVertex>, IIdentifiableGraphDataObject
     {
 
         public UniverseVertex() : base() { }
