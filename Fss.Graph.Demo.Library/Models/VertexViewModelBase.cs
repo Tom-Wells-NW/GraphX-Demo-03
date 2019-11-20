@@ -17,28 +17,12 @@ namespace Fss.Graph.Demo.Library.Models
             ID = -1;
         }
 
-        public bool Equals(IGraphXVertex other)
+        private long _id;
+        public long ID
         {
-            return Equals(this, other);
+            get { return _id; }
+            set { Set(ref _id, value); }
         }
-
-
-
-        private double _angle;
-        public double Angle 
-        {
-            get { return _angle; }
-            set { Set(ref _angle, value); }
-        }
-
-
-        private int _groupId;
-        public int GroupId
-        {
-            get { return _groupId; }
-            set { Set(ref _groupId, value); }
-        }
-
 
         private ProcessingOptionEnum _skipProcessing;
         public ProcessingOptionEnum SkipProcessing
@@ -47,12 +31,23 @@ namespace Fss.Graph.Demo.Library.Models
             set { Set(ref _skipProcessing, value); }
         }
 
-
-        private long _id;
-        public long ID
+        private double _angle;
+        public double Angle 
         {
-            get { return _id; }
-            set { Set(ref _id, value); }
+            get { return _angle; }
+            set { Set(ref _angle, value); }
+        }
+
+        private int _groupId;
+        public int GroupId
+        {
+            get { return _groupId; }
+            set { Set(ref _groupId, value); }
+        }
+
+        public bool Equals(IGraphXVertex other)
+        {
+            return Equals(this, other);
         }
     }
 }

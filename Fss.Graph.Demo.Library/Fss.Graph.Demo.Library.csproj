@@ -54,7 +54,6 @@
     <Compile Include="Models\IUniverseObjectModel.cs" />
     <Compile Include="Models\IUniverseVertex.cs" />
     <Compile Include="Models\NodeGraph.cs" />
-    <Compile Include="Models\TVertex.cs" />
     <Compile Include="Models\UniverseEdge.cs" />
     <Compile Include="Models\UniverseGraph.cs" />
     <Compile Include="Models\UniverseModel.cs" />
